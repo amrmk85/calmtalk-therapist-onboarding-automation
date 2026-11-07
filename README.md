@@ -235,6 +235,14 @@ flowchart LR
 
 ## 8. High-Level Architecture
 
+### 8.1 Network & Azure Components (Target Architecture)
+
+![CalmTalk Therapist Onboarding — Network & Azure Components (target architecture)](images/CalmTalk_Network_Architecture.png)
+
+<sub>Solid boxes are in use today. Dashed boxes marked **(R)** are recommended hardening for the target design.</sub>
+
+### 8.2 Logical Flow
+
 ```mermaid
 flowchart TD
     T[Therapist] --> M[therapist@ilexsystem.com]
