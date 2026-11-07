@@ -237,29 +237,10 @@ flowchart LR
 
 ### 8.1 Network & Azure Components (Target Architecture)
 
-![CalmTalk Therapist Onboarding — Network & Azure Components (target architecture)](images/CalmTalk_Network_Architecture.png)
+![CalmTalk Therapist Onboarding — Network & Azure Components (target architecture)](CalmTalk_Network_Architecture.png)
 
 <sub>Solid boxes are in use today. Dashed boxes marked **(R)** are recommended hardening for the target design.</sub>
 
-### 8.2 Logical Flow
-
-```mermaid
-flowchart TD
-    T[Therapist] --> M[therapist@ilexsystem.com]
-    M --> PA[Microsoft Power Automate<br/>Email intake and orchestration]
-    PA --> AG[Azure AI Foundry Intake Agent<br/>Email intents, reply, action,<br/>human-review assessment]
-    PA --> CU[Azure AI Content Understanding<br/>Document classification and<br/>content extraction]
-    AG --> PV[Power Automate<br/>Validate and route workflow actions]
-    CU --> PV
-    KB[(Azure AI Search<br/>Knowledge Base)] -.-> AG
-    PV --> API[CalmTalk API]
-    API --> DB[(Azure SQL)]
-    API --> BL[(Azure Blob Storage)]
-    API --> CRM[(CalmTalk CRM)]
-    DB --> CMS[Super-admin CMS<br/>Operations human review and final approval]
-    BL --> CMS
-    CMS --> ON[Therapist profile activated / online]
-```
 
 ---
 
